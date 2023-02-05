@@ -91,11 +91,43 @@ var finances = [
 
 var total_months;
 
-var total;
+var total = 0;
 
 var average_change;
 
 var greatest_increase_in_profits;
 
 var greatest_decrease_in_profits;
+
+total_months = finances.length
+
+function totalCalc(dataset) {
+    for (var i = 0; i < dataset.length; i++) {
+        if (dataset.length === total_months) {
+            total = total + dataset[i][1];
+            
+        }
+    }
+    console.log(total);
+}
+
+function averageChangeCalc() {
+    var temp_month_one;
+    var temp_month_two;
+    var temp_month_to_month_average_change;
+
+
+
+}
+
+totalCalc(finances);
+
+console.log(
+    `Total Months: ${total_months}`,
+    `Total: ${total}`,
+    `Average Change: `,
+    `Greatest Increase in Profits: `,
+    `Greatest Decrease in Profits: `
+    );
+
 
