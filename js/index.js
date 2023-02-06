@@ -157,6 +157,10 @@ function averageChange(dataset, select) {
         }
         var max = Math.max(...profits_in_profitArray);
         var min = Math.min(...profits_in_profitArray);
+
+        var real_max;
+        var real_min;
+
         var avg = sum / profits_in_profitArray.length;
 
         if (select === "avg") {
@@ -170,24 +174,31 @@ function averageChange(dataset, select) {
         if (select === "min") {
             return min;
         }
-
-        
     }
 }
 
-
 var avg_change = averageChange(finances, "avg");
+
 var max_in_array = averageChange(finances, "max");
 var min_in_array = averageChange(finances, "min");
 
-console.log (
-
+console.log(
     `
-    Total Months: ${total_months},
-    Total: ${total},
-    Average Change: ${avg_change},
-    Greatest Increase in Profits: ${max_in_array},
-    Greatest Decrease in Profits: ${min_in_array}
+        Financial Analysis
+        ----------------------------
+        Total Months: ${total_months}
+        Total: ${total}
+        Average  Change: ${avg_change}
+        Greatest Increase in Profits: ${max_in_array}
+        Greatest Decrease in Profits: ${min_in_array}
+        
     `
-
+    
+    `
+    Total Months:,
+    Total: ,
+    Average Change: ,
+    Greatest Increase in Profits: ,
+    Greatest Decrease in Profits: 
+    `
 );
