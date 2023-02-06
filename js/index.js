@@ -105,7 +105,7 @@ function totalCalc(dataset) {
             total = total + dataset[i][1];
         }
     }
-    console.log(total);
+    return total;
 }
 
 function averageChange(dataset, select) {
@@ -178,7 +178,7 @@ function averageChange(dataset, select) {
 }
 
 var avg_change = averageChange(finances, "avg");
-
+var total = totalCalc(finances);
 var max_in_array = averageChange(finances, "max");
 var min_in_array = averageChange(finances, "min");
 
@@ -192,13 +192,5 @@ console.log(
         Greatest Increase in Profits: ${max_in_array}
         Greatest Decrease in Profits: ${min_in_array}
         
-    `
-    
-    `
-    Total Months:,
-    Total: ,
-    Average Change: ,
-    Greatest Increase in Profits: ,
-    Greatest Decrease in Profits: 
     `
 );
