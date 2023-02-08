@@ -183,13 +183,18 @@ function changeFunc(dataset, option) {
     let d_temp_next;
     let currentChange;
     let currentChangeArray;
-    let total;
+    let total_months = 0;
+    let total = 0;
 
     let average;
     let greatest_increase;
     let greatest_decrease;
     
-    for ()
+    for (let i = 0; i < data.length - 1; i++) {
+        total_months = total_months + 1;
+        total = total + data[i][1]
+    }
+
 
     for (var i = 0; i < dataset.length - 1; i++) {
         d_temp = data[i];
@@ -203,11 +208,18 @@ function changeFunc(dataset, option) {
         if (option == null) return console.log("Re-write the function call, bye");
 
         if (option == "average") {
-            (dataset.length - 1)
+            average = total/(total_months - 1);
+            return average
         }
 
-        if (option == "gr-increase")
-        if (option == "gr-decrease")
+        if (option == "gr-increase") {
+            greatest_increase;
+            
+        }
+
+        if (option == "gr-decrease") {
+
+        }
 
 
 
@@ -225,8 +237,8 @@ function changeFunc(dataset, option) {
     }
 }
 
-var avg_change = changeFunc(finances);
-var total = totalCalc(finances);
+var avg_change = changeFunc(finances, "average");
+var total = changeFunc(finances, action);
 var max_in_array = changeFunc(finances, action);
 var min_in_array = changeFunc(finances, action);
 
