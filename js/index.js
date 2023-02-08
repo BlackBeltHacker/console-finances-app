@@ -133,7 +133,7 @@ function averageChange(dataset, select) {
     }
 
     //handle the profit array for average change
-    console.log(profitArray);
+    // console.log(profitArray);
 
     if (profitArray) {
         var profits_in_profitArray = [];
@@ -147,7 +147,7 @@ function averageChange(dataset, select) {
             profits_in_profitArray.push(profit_loss);
         }
 
-        console.log(profits_in_profitArray);
+        // console.log(profits_in_profitArray);
 
         if (profits_in_profitArray) {
             var sum = 0;
@@ -177,10 +177,58 @@ function averageChange(dataset, select) {
     }
 }
 
-var avg_change = averageChange(finances, "avg");
+function changeFunc(dataset, option) {
+    const data = dataset;
+    let d_temp;
+    let d_temp_next;
+    let currentChange;
+    let currentChangeArray;
+    let total;
+
+    let average;
+    let greatest_increase;
+    let greatest_decrease;
+    
+    for ()
+
+    for (var i = 0; i < dataset.length - 1; i++) {
+        d_temp = data[i];
+        d_temp_next = data[i + 1];
+        currentChange = d_temp_next[1] - d_temp[1];
+
+        currentChangeArray = [d_temp_next[0], currentChange];
+        finalChangeStatementArray = [currentChangeArray[0], currentChangeArray[1]];
+
+
+        if (option == null) return console.log("Re-write the function call, bye");
+
+        if (option == "average") {
+            (dataset.length - 1)
+        }
+
+        if (option == "gr-increase")
+        if (option == "gr-decrease")
+
+
+
+        console.log(d_temp);
+        console.log(d_temp_next);
+        console.log(currentChange);
+        console.log(currentChangeArray);
+        console.log(finalChangeStatementArray);
+
+        d_temp = null;
+        d_temp_next = null;
+        currentChange = null;
+        currentChangeArray = null;
+        finalChangeStatementArray = null;
+    }
+}
+
+var avg_change = changeFunc(finances);
 var total = totalCalc(finances);
-var max_in_array = averageChange(finances, "max");
-var min_in_array = averageChange(finances, "min");
+var max_in_array = changeFunc(finances, action);
+var min_in_array = changeFunc(finances, action);
 
 console.log(
     `
