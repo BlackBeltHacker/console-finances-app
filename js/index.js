@@ -87,165 +87,11 @@ var finances = [
     ["Feb-2017", 671099],
 ];
 
-var total_months;
-
-var total = 0;
-
-var average_change = averageChange(finances, "avg");
-
-var greatest_increase_in_profits = averageChange(finances, "max");
-
-var greatest_decrease_in_profits = averageChange(finances, "min");
-
-total_months = finances.length;
-
-function totalCalc(dataset) {
-    for (var i = 0; i < dataset.length; i++) {
-        if (dataset.length === total_months) {
-            total = total + dataset[i][1];
-        }
-    }
-    return total;
-}
-
-function averageChange(dataset, select) {
-    // get the second item of 3 arrays to get the number to compare.
-    profitArray = [];
-
-    for (var i = 0; i < dataset.length - 1; i++) {
-        var a1 = dataset[i];
-        var a2 = dataset[i + 1];
-        var n1 = a1[1];
-        var n2 = dataset[i + 1][1];
-        var tempChangeValue = n2 - n1;
-        var isProfit;
-        var a1 = dataset[i];
-        var a2 = dataset[i + 1];
-
-        if (tempChangeValue !== 0 && tempChangeValue < 0) {
-            isProfit = true;
-            profitArray.push([a1, a2, tempChangeValue, isProfit]);
-        }
-        if (tempChangeValue !== 0 && tempChangeValue > 0) {
-            isProfit = false;
-            profitArray.push([a1, a2, tempChangeValue, isProfit]);
-        }
-    }
-
-    //handle the profit array for average change
-    // console.log(profitArray);
-
-    if (profitArray) {
-        var profits_in_profitArray = [];
-
-        for (var i = 0; i < profitArray.length; i++) {
-            var p1 = profitArray[i];
-            var profit_loss = p1[2];
-            var pTest1 = profitArray[i][1][1] - profitArray[i][0][1];
-            var pTest2 = pTest1 === profit_loss;
-
-            profits_in_profitArray.push(profit_loss);
-        }
-
-        // console.log(profits_in_profitArray);
-
-        if (profits_in_profitArray) {
-            var sum = 0;
-            profits_in_profitArray.forEach((item) => {
-                sum += item;
-            });
-        }
-        var max = Math.max(...profits_in_profitArray);
-        var min = Math.min(...profits_in_profitArray);
-
-        var real_max;
-        var real_min;
-
-        var avg = sum / profits_in_profitArray.length;
-
-        if (select === "avg") {
-            return avg;
-        }
-
-        if (select === "max") {
-            return max;
-        }
-
-        if (select === "min") {
-            return min;
-        }
-    }
-}
-
-function changeFunc(dataset, option) {
-    const data = dataset;
-
-    let d_temp;
-    let d_temp_next;
-
-    let currentChange;
-    let currentChangeArray;
-    
-    let changeSortedArray = [];
-
-    let total_months = 0;
-    let total = 0;
-
-    let average;
-    let greatest_increase;
-    let greatest_decrease;
-    
-    for (let i = 0; i < data.length - 1; i++) {
-        total_months = total_months + 1;
-        total = total + data[i][1]
-    }
+//global variables
 
 
-    for (var i = 0; i < dataset.length - 1; i++) {
-        d_temp = data[i];
-        d_temp_next = data[i + 1];
-        currentChange = d_temp_next[1] - d_temp[1];
 
-        currentChangeArray = [d_temp_next[0], currentChange];
-        finalChangeStatementArray = [currentChangeArray[0], currentChangeArray[1]];
-
-        if (option == null) return console.log("Re-write the function call, bye");
-
-        if (option == "average") {
-            average = total/(total_months - 1);
-            return average
-        }
-
-        if (option == "gr-increase" || option == "gr-decrease") {
-
-        }
-
-
-        if (option == "gr-increase") {
-            greatest_increase;
-            
-        }
-
-        if (option == "gr-decrease") {
-
-        }
-        
-        console.log(d_temp);
-        console.log(d_temp_next);
-        console.log(currentChange);
-        console.log(currentChangeArray);
-        console.log(finalChangeStatementArray);
-
-        d_temp = null;
-        d_temp_next = null;
-        currentChange = null;
-        currentChangeArray = null;
-        finalChangeStatementArray = null;
-
-
-        
-    }
-}
+//functions
 
 function totalMonths() {
 
@@ -262,21 +108,19 @@ function averageChange() {
 function greatestIncreaseOrDecrease(){
 
 }
-
-var avg_change = changeFunc(finances, "average");
-var total = changeFunc(finances, "total");
-var max_in_array = changeFunc(finances, "max");
-var min_in_array = changeFunc(finances, "min");
-
+/* 
+commented out for time being
 console.log(
     `
         Financial Analysis
         ----------------------------
-        Total Months: ${total_months}
-        Total: ${total}
-        Average  Change: ${avg_change}
-        Greatest Increase in Profits: ${max_in_array}
-        Greatest Decrease in Profits: ${min_in_array}
+        Total Months: ${}
+        Total: ${}
+        Average  Change: ${}
+        Greatest Increase in Profits: ${}
+        Greatest Decrease in Profits: ${}
         
     `
 );
+
+*/
